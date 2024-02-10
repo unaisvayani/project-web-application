@@ -5,7 +5,13 @@ const Event = () => {
     alert("Alert message");
   };
 
-  return <button onClick={handleClick}>Click for alert</button>;
+  return (
+    <div className="button-container">
+      <button className="btn" onClick={handleClick}>
+        Click Me
+      </button>
+    </div>
+  );
 };
 
 export default Event;
