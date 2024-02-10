@@ -18,7 +18,34 @@ const Data = () => {
     fetchData();
   }, []);
 
-  return <div>{data ? JSON.stringify(data) : "Loading..."}</div>;
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Temperature (°C)</th>
+          <th>Temperature (°F)</th>
+          <th>Summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data ? (
+          data.map((item, index) => (
+            <tr key={index}>
+              <td>{new Date(item.date).toLocaleString()}</td>
+              <td>{item.temperatureC}</td>
+              <td>{item.temperatureF}</td>
+              <td>{item.summary}</td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colSpan="4">Loading...</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  );
 };
 
 export default Data;
