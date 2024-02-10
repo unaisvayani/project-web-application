@@ -455,13 +455,5 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*xlsx
-/APIHost/Stripe/Properties/launchSettings.json
-/APIHost/Sparkpost/Properties/launchSettings.json
-/APIHost/IAM/Properties/launchSettings.json
-/APIHost/DotMailer/Properties/launchSettings.json
-/APIHost/zendekClient/Properties
 
-
-*.zip
 settings.json
