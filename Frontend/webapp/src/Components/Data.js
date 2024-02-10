@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from "react";
+import useFetchData from "../Services/useFetchData";
 
 const Data = () => {
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://localhost:7230/WeatherForecast");
-        const result = await response.json();
-        console.log("Data fetched:", result);
-        setData(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const serviceData = useFetchData("https://localhost:7230/WeatherForecast");
 
-    fetchData();
-  }, []);
+  useEffect(() => {
+    setData(serviceData);
+  }, [serviceData]);
 
   const handleSummaryChange = (index, event) => {
     const updatedData = [...data];
