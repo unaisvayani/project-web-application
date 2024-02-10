@@ -18,6 +18,12 @@ const Data = () => {
     fetchData();
   }, []);
 
+  const handleSummaryChange = (index, event) => {
+    const updatedData = [...data];
+    updatedData[index].summary = event.target.value;
+    setData(updatedData);
+  };
+
   return (
     <table>
       <thead>
@@ -35,7 +41,13 @@ const Data = () => {
               <td>{new Date(item.date).toLocaleString()}</td>
               <td>{item.temperatureC}</td>
               <td>{item.temperatureF}</td>
-              <td>{item.summary}</td>
+              <td>
+                <input
+                  type="text"
+                  value={item.summary}
+                  onChange={(event) => handleSummaryChange(index, event)}
+                />
+              </td>
             </tr>
           ))
         ) : (

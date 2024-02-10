@@ -1,6 +1,7 @@
 import Home from "../src/Components/Home";
-import "./App.css";
 import Data from "./Components/Data";
+import Event from "./Components/Event";
+import "./App.css";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <header className="App-header">
         <Home />
         <Data />
+        <Event />
       </header>
     </div>
   );
